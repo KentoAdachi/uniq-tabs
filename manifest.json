@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Tab Manager",
+    "name": "uniq-tabs",
     "version": "1.0",
     "background": {
       "service_worker": "background.js"
