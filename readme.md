@@ -1,7 +1,8 @@
 # uniq-tabs
-
 ## 概要
 uniq-tabsは、重複したタブが開かれるのを防ぐChrome拡張機能です。重複したタブが検出されると、新しいタブを閉じるか既存のタブに切り替えるかを選択するプロンプトが表示されます。
+
+![image](https://github.com/user-attachments/assets/6cb72726-5b38-430f-b186-12b92f69b855)
 
 ## 特徴
 - URLに基づいて重複したタブを検出します。
