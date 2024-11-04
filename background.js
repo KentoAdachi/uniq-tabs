@@ -64,29 +64,3 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     handleTab(changeInfo.url, tabId);
   }
 });
-
-// タブがアクティブになったときのリスナー
-chrome.tabs.onActivated.addListener(function (activeInfo) {
-  chrome.tabs.get(activeInfo.tabId, function (tab) {
-    handleTab(tab.url, tab.id);
-  });
-});
-
-// ブラウザ起動時のリスナー
-chrome.runtime.onStartup.addListener(function () {
-  chrome.tabs.query({}, function (tabs) {
-    const urlMap = {};
-    for (let tab of tabs) {
-      if (urlMap[tab.url]) {
-        chrome.tabs.remove(tab.id);
-      } else {
-        urlMap[tab.url] = tab.id;
-      }
-    }
-  });
-});
-
-// 拡張機能のインストール時のリスナー
-chrome.runtime.onInstalled.addListener(function () {
-  chrome.runtime.onStartup.dispatch();
-});
